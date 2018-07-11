@@ -1,0 +1,49 @@
+## Basic Configurtion
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Born Genuis"
+theme = "hugo-goa"
+author = "Harsain"
+
+## Site Settings
+[params]
+author = "Harsain"
+intro = "Get sh!t DONE"
+description = "Currently working at @Versent"
+authorimage = "avatar.jpg"
+dateformat = "Apr 5, 1986"
+
+## Site Meta Settings
+[params.meta]
+description = "attempt to define myself"
+keywords = "developer,java,js,nodejs,golang"
+
+## Social Accounts
+[params.social]
+github = "harsain"
+linkedin = "harsain"
+twitter = "harsain"
+stackoverflow = "harsain"
+email = "harsain@gmail.com"
+google = "harsain"
+facebook = "harsain"
+
+## Extras
+[params.extra]
+copyright = "© 2018 , Harsain Kapoor. [Some Rights Reserved](https://creativecommons.org/licenses/by/3.0/)"
+poweredby = true
+highlightjs = true
+
+## Main Menu
+[[menu.main]]
+    name = "home"
+    weight = 100
+    url = "/"
+[[menu.main]]
+    name = "about"
+    weight = 200
+    url = "/about/"
+[[menu.main]]
+    name = "resume"
+    weight = 300
+    url = "/resume/"
