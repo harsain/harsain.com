@@ -1,0 +1,70 @@
+## Basic Configuration
+
+baseurl = "https://harsain.com"
+builddrafts = false
+canonifyurls = false
+languageCode = "en-US"
+
+contentdir = "content"
+layoutdir = "layouts"
+publishdir = "public"
+
+author = "Harsain Kapoor"
+title = "Harsain Kapoor"
+
+theme = "hugo-goa"
+
+## Hugo Built-in Features
+# disqusShortname = "https-shenoybr-github-io-hugo-goa-demo" # Comment out to disable Disqus.
+ggoogleAnalytics = "G-CP3PR8LM43"
+enableRobotsTXT = true
+
+## Site Settings
+[params]
+author = "Harsain Kapoor"
+intro = "A polygot engineer, keeping it simple!"
+description = "Hi All👋, Welcome to my digital world. With more than 11 years of experience and currently working for a financial organisation in Australia. Note, all views on this site are my personal and have nothing to do with my employer."
+authorimage = "headshot.jpg"
+dateformat = "Apr 5, 2023"
+
+## Site Meta Settings
+[params.meta]
+description = "A polygot engineer, keeping it simple"
+keywords = "harsain,developer,programmer,coder,coding,software,architecture,techie,geek,enthusiast"
+
+## Social Accounts
+[params.social]
+github = "harsain"
+instagram = "harsain"
+linkedin = "harsain"
+twitter = "harsain"
+facebook = "harsain"
+stackoverflow = "harsain"
+gitlab = "harsain"
+bitbucket = "harsain"
+hackernews = "harsain"
+reddit = "harsain"
+keybase = "hskoder"
+strava = "harsain"
+email = "hskoder@gmail.com"
+
+## Extras
+[params.extra]
+copyright = "© 2023. Harsain Kapoor. [Rights Reserved](https://creativecommons.org/licenses/by-nc-nd/4.0/)."
+poweredby = true
+highlightjs = true
+socialmarkup = true
+toc = true
+displayrssicon = true
+
+## Main Menu
+# [[menu.main]]
+# name = "blog"
+# weight = 100
+# identifier = "blog"
+# url = "/blog/"
+# [[menu.main]]
+# name = "about"
+# identifier = "about"
+# weight = 200
+# url = "/about/"
