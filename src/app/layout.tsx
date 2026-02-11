@@ -5,7 +5,7 @@ import { SiteFooter } from '@/components/site-footer';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: "Har Sain - Principal Engineer",
+  title: "Harsain - Principal Engineer",
   description: "Building scalable systems and leading technical teams. Specializing in cloud architecture, distributed systems, and engineering leadership.",
 };
 

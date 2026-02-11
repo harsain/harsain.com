@@ -22,7 +22,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b border-secondary bg-background/95 backdrop-blur-sm">
       <div className="container mx-auto flex h-20 max-w-4xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-4">
-          <span className="text-xl font-bold text-primary">Har Sain</span>
+          <span className="text-xl font-bold text-primary">Harsain</span>
         </Link>
         <nav className="hidden items-center gap-2 md:flex">
           {navLinks.map((link) => (
@@ -50,7 +50,7 @@ export function SiteHeader() {
             </SheetTrigger>
             <SheetContent side="left">
               <Link href="/" className="mb-6 flex items-center" onClick={() => setIsOpen(false)}>
-                 <span className="text-xl font-bold text-primary">Har Sain</span>
+                 <span className="text-xl font-bold text-primary">Harsain</span>
               </Link>
               <div className="flex flex-col gap-4">
                 {navLinks.map((link) => (

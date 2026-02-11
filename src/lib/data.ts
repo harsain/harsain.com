@@ -1,5 +1,5 @@
 export const profileData = {
-  name: 'Har Sain',
+  name: 'Harsain',
   avatarImageId: 'hero-avatar',
   experience: '14+ Years of Experience',
   title: 'Principal Engineer &',
