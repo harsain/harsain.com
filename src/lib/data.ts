@@ -1,67 +1,96 @@
 export const profileData = {
-  name: 'Harsain',
-  initials: 'H',
-  title: 'Co-Founder | Product | Growth | SEO',
+  name: 'Har Sain',
+  avatarImageId: 'hero-avatar',
+  experience: '14+ Years of Experience',
+  title: 'Principal Engineer &',
+  subtitle: 'Full Stack Developer',
   summary:
-    'Experienced product leader with a track record of founding startups and driving growth through strategic product management, SEO, and market expansion. Passionate about building innovative solutions and fostering connections within the tech ecosystem.',
-  skills: ['Product Management', 'Growth Hacking', 'SEO', 'Startups', 'UI/UX', 'Digital Marketing'],
+    'Building scalable systems and leading technical teams. <br /> Specializing in cloud architecture, distributed systems, and engineering leadership.',
+  stats: [
+      {
+        icon: 'User',
+        title: 'Personal',
+        description: 'Father, husband, son, and brother. Family is my foundation and my greatest project.',
+      },
+      {
+        icon: 'GraduationCap',
+        title: 'Education',
+        description: 'M.S. Computer Science\nB.S. Computer Engineering',
+      },
+      {
+        icon: 'Code2',
+        title: 'Expertise',
+        description: 'Full Stack Architecture, System Design, Technical Leadership, Scalable Solutions.',
+      }
+  ]
 };
 
-export const projects = [
+export const skills = {
+  frontend: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Redux', 'GraphQL'],
+  backend: ['Node.js', 'Python', 'Go', 'PostgreSQL', 'Redis', 'Microservices'],
+  devops: ['AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Terraform', 'Monitoring'],
+};
+
+export const experience = [
   {
-    id: '1',
-    title: 'Banani.co',
-    description: 'A platform for AI-driven app development, simplifying the process of creating and deploying applications with intelligent features.',
-    imagePlaceholderId: 'project-1',
-    tags: ['AI', 'SaaS', 'App Development'],
-    link: '#',
+    date: '2021 - Present',
+    title: 'Principal Engineer',
+    description: 'Leading architecture and technical strategy for core platform services. Mentoring senior engineers and driving best practices across the organization.',
+    tags: ['Architecture', 'Team Leadership']
   },
   {
-    id: '2',
-    title: 'Aus-India Business Consulting',
-    description:
-      'Consulting services aimed at fostering trade and business relationships between Australia and India, leveraging market insights and strategic partnerships.',
-    imagePlaceholderId: 'project-2',
-    tags: ['Consulting', 'International Trade'],
-    link: '#',
+    date: '2018 - 2021',
+    title: 'Senior Staff Engineer',
+    description: 'Designed and implemented high-throughput data processing pipelines. Reduced system latency by 40% through infrastructure optimization.',
+    tags: ['System Design', 'Cloud Native']
   },
   {
-    id: '3',
-    title: 'SEO & Growth Engine',
-    description:
-      'A proprietary engine developed to scale organic traffic and user acquisition for various digital products and services, focusing on long-term sustainable growth.',
-    imagePlaceholderId: 'project-3',
-    tags: ['SEO', 'Growth', 'Marketing Tech'],
-    link: '#',
+    date: '2014 - 2018',
+    title: 'Senior Full Stack Engineer',
+    description: 'Full-cycle development of customer-facing web applications. Led the migration from monolithic architecture to microservices.',
+    tags: []
+  },
+  {
+    date: '2011 - 2014',
+    title: 'Software Engineer',
+    description: 'Developed core features for SaaS products. Collaborated closely with product and design teams to deliver seamless user experiences.',
+    tags: []
   },
 ];
 
-export const blogPosts = [
+export const projects = [
   {
-    id: '1',
-    title: 'The Art of Product-Led Growth',
-    summary:
-      "An in-depth look at how to build products that sell themselves. We'll explore the key principles of product-led growth and how to apply them to your own business.",
-    publicationDate: '2024-05-15',
-    imagePlaceholderId: 'blog-1',
-    link: '#',
+    title: 'Cloud Analytics Platform',
+    description: 'A real-time data visualization platform processing terabytes of data daily. Built with React, D3.js, and AWS.',
+    imagePlaceholderId: 'project-analytics',
+    githubUrl: '#',
+    liveUrl: '#',
+    tags: ['React', 'AWS', 'D3.js']
   },
   {
-    id: '2',
-    title: 'Unlocking Global Markets: A Guide for Startups',
-    summary:
-      'Expanding into new markets can be daunting. This guide provides a framework for startups looking to go global, covering everything from market research to localization.',
-    publicationDate: '2024-04-22',
-    imagePlaceholderId: 'blog-2',
-    link: '#',
+    title: 'FinTech Mobile App',
+    description: 'Secure mobile banking application with biometric authentication and real-time transaction tracking.',
+    imagePlaceholderId: 'project-fintech',
+    githubUrl: '#',
+    liveUrl: '#',
+    tags: ['React Native', 'Node.js', 'GraphQL']
+  }
+];
+
+export const interests = [
+  {
+    title: 'Coding',
+    description: 'Crafting elegant solutions to complex problems. For me, engineering is as much an art as it is a science.',
+    imagePlaceholderId: 'interest-coding',
   },
-    {
-    id: '3',
-    title: 'Why SEO is Still King in the Age of AI',
-    summary:
-      'With the rise of AI, some say SEO is dead. I argue it\'s more important than ever. Discover how to adapt your SEO strategy for an AI-first world.',
-    publicationDate: '2024-03-10',
-    imagePlaceholderId: 'blog-3',
-    link: '#',
+  {
+    title: 'Music',
+    description: 'Finding rhythm and harmony in noise. Music fuels my creativity and helps me find flow.',
+    imagePlaceholderId: 'interest-music',
   },
+  {
+    title: 'Photography',
+    description: 'Capturing moments in time. Photography teaches me to look at the world from different perspectives.',
+    imagePlaceholderId: 'interest-photography',
+  }
 ];
