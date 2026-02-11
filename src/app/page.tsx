@@ -3,8 +3,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { User, GraduationCap, Code2, Linkedin, Github, ExternalLink } from 'lucide-react';
-import { profileData, skills, experience, projects, interests } from '@/lib/data';
+import { profileData, skills, experience, projects, blogs, interests } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { BlogPreviewCard } from '@/components/blog-preview-card';
 
 const iconMap: { [key: string]: React.ElementType } = {
   User,
@@ -175,6 +176,21 @@ export default function Home() {
               );
             })}
           </div>
+      </section>
+
+      {/* Blog Section */}
+      <section id="blog" className="border-t-2 border-secondary py-20">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-primary">From the Blog</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            Thoughts on technology, leadership, and building great products.
+          </p>
+        </div>
+        <div className="mt-12 grid grid-cols-1 gap-8">
+          {blogs.map(post => (
+            <BlogPreviewCard key={post.id} post={post} />
+          ))}
+        </div>
       </section>
 
       {/* Interests */}

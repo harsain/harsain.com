@@ -77,6 +77,25 @@ export const projects = [
   }
 ];
 
+export const blogs = [
+  {
+    id: 'gcp-genai-mastery',
+    title: 'Mastering Generative AI on Google Cloud',
+    summary: 'A deep dive into the architectures and best practices for deploying scalable and efficient generative AI workloads on Google Cloud Platform.',
+    publicationDate: '2024-05-20',
+    imagePlaceholderId: 'blog-genai-gcp',
+    link: '#',
+  },
+  {
+    id: 'microservices-vs-monoliths',
+    title: 'Microservices vs. Monoliths: The Final Verdict?',
+    summary: 'Decades into the debate, has a clear winner emerged? I break down the real-world trade-offs, costs, and team dynamics I’ve observed.',
+    publicationDate: '2024-04-15',
+    imagePlaceholderId: 'blog-microservices',
+    link: '#',
+  },
+];
+
 export const interests = [
   {
     title: 'Coding',

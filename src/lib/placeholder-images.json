@@ -35,6 +35,18 @@
       "description": "Placeholder for Photography Interest",
       "imageUrl": "https://images.unsplash.com/photo-1502982720700-b8f83a731b53?q=80&w=1470&auto=format&fit=crop",
       "imageHint": "photography camera"
+    },
+    {
+      "id": "blog-genai-gcp",
+      "description": "Placeholder for Generative AI on GCP blog post",
+      "imageUrl": "https://images.unsplash.com/photo-1696204245231-8157e84138a4?q=80&w=1470&auto=format&fit=crop",
+      "imageHint": "cloud architecture"
+    },
+    {
+      "id": "blog-microservices",
+      "description": "Placeholder for Microservices vs. Monoliths blog post",
+      "imageUrl": "https://images.unsplash.com/photo-1564865878688-9a244444042a?q=80&w=1470&auto=format&fit=crop",
+      "imageHint": "network servers"
     }
   ]
 }
