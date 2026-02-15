@@ -1,17 +1,17 @@
 export const profileData = {
   name: 'Harsain',
   avatarImageId: 'hero-avatar',
-  githubUrl: '#',
-  experience: '14+ Years of Experience',
-  title: 'Principal Engineer &',
-  subtitle: 'Full Stack Developer',
+  githubUrl: 'https://github.com/harsain',
+  experience: '10+ Years of Experience',
+  title: 'Principal Software Engineer &',
+  subtitle: 'Technical Leader',
   summary:
-    'Building scalable systems and leading technical teams. <br /> Specializing in cloud architecture, distributed systems, and engineering leadership.',
+    'A technical leader with 10+ years of experience delivering enterprise-scale platforms for Tier-1 banking and global SaaS organizations. <br /> Deep expertise in technical strategy, AWS, event-driven microservices, and reliability engineering.',
   stats: [
       {
         icon: 'User',
-        title: 'Personal',
-        description: 'Father, husband, son, and brother. Family is my foundation and my greatest project.',
+        title: 'Technical Leadership',
+        description: 'Domain ownership, roadmap definition, and architecture governance.',
       },
       {
         icon: 'GraduationCap',
@@ -20,61 +20,61 @@ export const profileData = {
       },
       {
         icon: 'CodeXml',
-        title: 'Expertise',
-        description: 'Full Stack Architecture, System Design, Technical Leadership, Scalable Solutions.',
+        title: 'Distributed Systems',
+        description: 'Event-driven architecture, microservices, and asynchronous messaging patterns.',
       }
   ]
 };
 
 export const skills = {
-  frontend: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Redux', 'GraphQL'],
-  backend: ['Node.js', 'Python', 'Go', 'PostgreSQL', 'Redis', 'Microservices'],
-  devops: ['AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Terraform', 'Monitoring'],
+  frontend: ['TypeScript', 'React', 'Next.js', 'React Native', 'JavaScript'],
+  backend: ['Java', 'Golang', 'Python', 'Node.js', 'Spring Boot', 'Kafka'],
+  devops: ['AWS', 'Kubernetes', 'Docker', 'Terraform', 'CI/CD', 'Jenkins'],
 };
 
 export const experience = [
   {
-    date: '2021 - Present',
-    title: 'Principal Engineer',
-    description: 'Leading architecture and technical strategy for core platform services. Mentoring senior engineers and driving best practices across the organization.',
-    tags: ['Architecture', 'Team Leadership']
+    date: 'Nov 2022 - Present',
+    title: 'Principal Engineer | National Australia Bank',
+    description: 'Owning technical strategy, architecture, and engineering roadmap for the Loyalty sub-domain. Leading platform modernisation into event-driven, cloud-native microservices.',
+    tags: ['Leadership', 'Architecture', 'AWS']
   },
   {
-    date: '2018 - 2021',
-    title: 'Senior Staff Engineer',
-    description: 'Designed and implemented high-throughput data processing pipelines. Reduced system latency by 40% through infrastructure optimization.',
-    tags: ['System Design', 'Cloud Native']
+    date: 'Sep 2019 - Nov 2022',
+    title: 'Senior Staff Engineer | Zendesk',
+    description: 'Defined and executed the technical vision for global customer messaging platforms. Designed highly available, distributed systems supporting millions of users.',
+    tags: ['Distributed Systems', 'Kafka', 'TypeScript']
   },
   {
-    date: '2014 - 2018',
-    title: 'Senior Full Stack Engineer',
-    description: 'Full-cycle development of customer-facing web applications. Led the migration from monolithic architecture to microservices.',
-    tags: []
+    date: 'Sep 2018 - Sep 2019',
+    title: 'Senior Consultant & Team Lead | National Australia Bank',
+    description: 'Led teams delivering customer-facing digital platforms. Established engineering standards and provided hands-on leadership.',
+    tags: ['React', 'Node.js', 'Team Lead']
   },
   {
-    date: '2011 - 2014',
-    title: 'Software Engineer',
-    description: 'Developed core features for SaaS products. Collaborated closely with product and design teams to deliver seamless user experiences.',
-    tags: []
+    date: 'Mar 2017 - Sep 2018',
+    title: 'Senior Microservices Engineer | Versent',
+    description: 'Designed and built cloud-native microservices platforms for clients, advising on event choreography and orchestration patterns.',
+    tags: ['Microservices', 'Consulting', 'Cloud-Native']
   },
 ];
 
 export const projects = [
   {
-    title: 'Cloud Analytics Platform',
-    description: 'A real-time data visualization platform processing terabytes of data daily. Built with React, D3.js, and AWS.',
+    title: 'NAB Loyalty & Offers Platform',
+    description: 'Led architecture and execution of a large-scale credit card loyalty migration to a modern, event-driven offers platform on AWS with zero customer disruption.',
     imagePlaceholderId: 'project-analytics',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/harsain',
     liveUrl: '#',
-    tags: ['React', 'AWS', 'D3.js']
+    tags: ['AWS', 'Java', 'Kafka', 'Architecture']
   },
   {
-    title: 'FinTech Mobile App',
-    description: 'Secure mobile banking application with biometric authentication and real-time transaction tracking.',
+    title: 'Zendesk Global Messaging',
+    description: 'Designed a highly available, distributed messaging platform for Zendesk, supporting millions of end-users across multiple regions and social channels.',
     imagePlaceholderId: 'project-fintech',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/harsain',
     liveUrl: '#',
-    tags: ['React Native', 'Node.js', 'GraphQL']
+    tags: ['Distributed Systems', 'TypeScript', 'Golang', 'Python']
   }
 ];
 
