@@ -28,8 +28,6 @@ export default function Home() {
               alt={profileData.name}
               width={128}
               height={128}
-              priority
-              className="h-full w-full object-cover"
               data-ai-hint={avatarImage.imageHint}
             />
           )}
