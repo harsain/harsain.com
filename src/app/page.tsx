@@ -147,55 +147,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section id="projects" className="border-t-2 border-secondary py-20">
-         <div className="text-center">
-            <h2 className="text-3xl font-bold text-primary">Featured Projects</h2>
-          </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
-            {projects.map(project => {
-              const image = PlaceHolderImages.find(p => p.id === project.imagePlaceholderId);
-              return (
-              <Card key={project.title} className="overflow-hidden p-0">
-                {image && <Image src={image.imageUrl} alt={project.title} width={600} height={400} className="h-60 w-full object-cover" data-ai-hint={image.imageHint} unoptimized />}
-                <div className="p-6">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-semibold">{project.title}</h3>
-                    <div className="flex items-center gap-3">
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
-                        <Github className="h-5 w-5" />
-                      </a>
-                       <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
-                        <ExternalLink className="h-5 w-5" />
-                      </a>
-                    </div>
-                  </div>
-                  <p className="mt-2 text-sm text-muted-foreground">{project.description}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.tags.map(tag => <Badge key={tag} variant="outline" className="rounded-full border-primary/50 text-primary">{tag}</Badge>)}
-                  </div>
-                </div>
-              </Card>
-              );
-            })}
-          </div>
-      </section>
-
-      {/* Blog Section */}
-      <section id="blog" className="border-t-2 border-secondary py-20">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-primary">From the Blog</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Thoughts on technology, leadership, and building great products.
-          </p>
-        </div>
-        <div className="mt-12 grid grid-cols-1 gap-8">
-          {blogs.map(post => (
-            <BlogPreviewCard key={post.id} post={post} />
-          ))}
-        </div>
-      </section>
-
       {/* Interests */}
       <section id="interests" className="border-t-2 border-secondary py-20">
           <div className="text-center">
