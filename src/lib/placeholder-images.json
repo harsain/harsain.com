@@ -21,7 +21,7 @@
     {
       "id": "interest-coding",
       "description": "Placeholder for Coding Interest",
-      "imageUrl": "https://storage.googleapis.com/studioprompt-images/61c47094-1a9f-43b9-8798-251f11c750b3.jpeg",
+      "imageUrl": "https://www.dropbox.com/scl/fi/cs2752gq5qnoe2wugjxbt/Gemini_Generated_Image_rl9ld7rl9ld7rl9l.png?rlkey=xggpq4crwrb6pn9ua3yt74rsn&st=yab4ys4v&raw=1",
       "imageHint": "code editor"
     },
     {
@@ -31,10 +31,10 @@
       "imageHint": "music sound"
     },
     {
-      "id": "interest-photography",
-      "description": "Placeholder for Photography Interest",
-      "imageUrl": "https://images.unsplash.com/photo-1622319977720-9949ac28adc4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwaG90b2dyYXBoeSUyMGNhbWVyYXxlbnwwfHx8fDE3NzExNTc5NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "photography camera"
+      "id": "interest-cycling",
+      "description": "Placeholder for Cycling Interest",
+      "imageUrl": "https://www.dropbox.com/scl/fi/yuw3wyzda0la217xes9i8/c331eb0c-a989-426e-ba47-c5cc10b5b58a.jpeg?rlkey=kjya7s21rl1xebqxmysrrg8t1&st=ps6yffp2&raw=1",
+      "imageHint": "cycling road"
     },
     {
       "id": "blog-genai-gcp",
