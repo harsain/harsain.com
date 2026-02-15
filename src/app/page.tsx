@@ -21,15 +21,14 @@ export default function Home() {
     <div className="container mx-auto max-w-4xl px-6">
       {/* Hero Section */}
       <section id="about" className="flex flex-col items-center py-20 text-center md:py-32">
-        <div className="mb-8 h-[120px] w-[120px] overflow-hidden rounded-full border-4 border-primary shadow-lg">
+        <div className="mb-8 h-32 w-32 overflow-hidden rounded-full border-4 border-primary shadow-lg">
           {avatarImage && (
             <Image
               src={avatarImage.imageUrl}
               alt={profileData.name}
-              width={120}
-              height={120}
+              width={128}
+              height={128}
               priority
-              className="h-full w-full object-cover"
               data-ai-hint={avatarImage.imageHint}
             />
           )}
