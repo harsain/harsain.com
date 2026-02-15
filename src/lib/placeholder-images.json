@@ -3,7 +3,7 @@
     {
       "id": "hero-avatar",
       "description": "Avatar for Harsain",
-      "imageUrl": "https://storage.googleapis.com/studioprompt-images/harsain-new.jpg",
+      "imageUrl": "https://images.unsplash.com/photo-1655249493799-9cee4fe983bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzExMTc4MDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional portrait"
     },
     {
@@ -33,13 +33,13 @@
     {
       "id": "interest-photography",
       "description": "Placeholder for Photography Interest",
-      "imageUrl": "https://images.unsplash.com/photo-1502982720700-b8f83a731b53?q=80&w=1470&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1605076896228-086cda8868c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwaG90b2dyYXBoeSUyMGNhbWVyYXxlbnwwfHx8fDE3NzExNTc5NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "photography camera"
     },
     {
       "id": "blog-genai-gcp",
       "description": "Placeholder for Generative AI on GCP blog post",
-      "imageUrl": "https://images.unsplash.com/photo-1696204245231-8157e84138a4?q=80&w=1470&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1696204245245231-8157e84138a4?q=80&w=1470&auto=format&fit=crop",
       "imageHint": "cloud architecture"
     },
     {
