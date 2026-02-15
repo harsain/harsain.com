@@ -47,7 +47,10 @@ export default function Home() {
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <Button asChild size="lg">
-            <a href="#projects">View Projects</a>
+            <a href={profileData.githubUrl} target="_blank" rel="noopener noreferrer">
+              <Github className="mr-2 h-4 w-4" />
+              GitHub Profile
+            </a>
           </Button>
           <Button asChild variant="outline" size="lg" className="border-2 border-primary text-primary">
             <a href="https://linkedin.com/in/harsain" target="_blank" rel="noopener noreferrer">

@@ -1,6 +1,7 @@
 export const profileData = {
   name: 'Harsain',
   avatarImageId: 'hero-avatar',
+  githubUrl: '#',
   experience: '14+ Years of Experience',
   title: 'Principal Engineer &',
   subtitle: 'Full Stack Developer',
