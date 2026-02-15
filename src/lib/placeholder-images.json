@@ -3,7 +3,7 @@
     {
       "id": "hero-avatar",
       "description": "Avatar for Harsain",
-      "imageUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1374&auto=format&fit=crop",
+      "imageUrl": "https://storage.googleapis.com/studioprompt-images/harsain-5f5c3529-5b71-464a-939e-64c8d5a113d5.jpeg",
       "imageHint": "professional portrait"
     },
     {
@@ -33,7 +33,7 @@
     {
       "id": "interest-photography",
       "description": "Placeholder for Photography Interest",
-      "imageUrl": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1470&auto=format&fit=crop",
+      "imageUrl": "https://images.unsplash.com/photo-1622319977720-9949ac28adc4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwaG90b2dyYXBoeSUyMGNhbWVyYXxlbnwwfHx8fDE3NzExNTc5NDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "photography camera"
     },
     {
