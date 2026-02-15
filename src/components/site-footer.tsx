@@ -30,7 +30,7 @@ export function SiteFooter() {
           </a>
         </div>
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Harsain. All rights reserved.
+          © {new Date().getFullYear()} Harsain Kapoor. All rights reserved.
         </p>
       </div>
     </footer>
