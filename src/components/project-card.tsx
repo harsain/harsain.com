@@ -33,7 +33,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 height={400}
                 className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 data-ai-hint={image.imageHint}
-                unoptimized
               />
             )}
           </div>

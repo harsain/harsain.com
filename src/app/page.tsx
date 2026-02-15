@@ -29,7 +29,6 @@ export default function Home() {
               fill
               className="object-cover"
               data-ai-hint={avatarImage.imageHint}
-              unoptimized
             />
           )}
         </div>
@@ -106,7 +105,7 @@ export default function Home() {
             </Card>
              <Card>
               <CardHeader>
-                <CardTitle className="text-primary">DevOps</CardTitle>
+                <CardTitle className="text-primary">Cloud & DevOps</CardTitle>
               </CardHeader>
               <CardContent className="flex flex-wrap gap-2">
                 {skills.devops.map(skill => <Badge key={skill} className="rounded-full bg-primary/10 py-1 px-3 font-medium text-primary hover:bg-primary/20">{skill}</Badge>)}
@@ -157,7 +156,7 @@ export default function Home() {
               const image = PlaceHolderImages.find(p => p.id === project.imagePlaceholderId);
               return (
               <Card key={project.title} className="overflow-hidden p-0">
-                {image && <Image src={image.imageUrl} alt={project.title} width={600} height={400} className="h-60 w-full object-cover" data-ai-hint={image.imageHint} unoptimized/>}
+                {image && <Image src={image.imageUrl} alt={project.title} width={600} height={400} className="h-60 w-full object-cover" data-ai-hint={image.imageHint} />}
                 <div className="p-6">
                   <div className="flex items-center justify-between">
                     <h3 className="text-xl font-semibold">{project.title}</h3>
@@ -209,7 +208,7 @@ export default function Home() {
               <Card key={interest.title}>
                 <CardContent className="p-0">
                   <div className="mb-6 h-48 w-full overflow-hidden rounded-md">
-                    {image && <Image src={image.imageUrl} alt={interest.title} width={400} height={300} className="h-full w-full object-cover" data-ai-hint={image.imageHint} unoptimized/>}
+                    {image && <Image src={image.imageUrl} alt={interest.title} width={400} height={300} className="h-full w-full object-cover" data-ai-hint={image.imageHint} />}
                   </div>
                   <h3 className="text-xl font-semibold">{interest.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{interest.description}</p>
