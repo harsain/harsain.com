@@ -61,29 +61,3 @@ This file is the main entry point for your homepage. It imports the content from
 ## 5. Styling: `src/app/globals.css`
 
 This file contains the core color theme for your website (using CSS variables like `--primary`, `--background`, etc.). If you want to change the site's color scheme, this is the place to do it.
-
-## 6. Deploying to GitHub Pages
-
-Your project is now configured to be deployed as a static site on GitHub Pages. Here’s how to do it:
-
-### Important Limitations
-
-Because a static site has no server, features that require a backend will not work. For this project, that means:
-*   The **Contact Form** will not send messages.
-*   The **AI Content Optimizer** page will not be able to generate suggestions.
-
-### Deployment Steps
-
-1.  **Push to GitHub:** Create a new repository on GitHub and push the project code to it.
-
-2.  **Update `basePath` (Crucial!):** Your site will likely be deployed to a sub-path (e.g., `https://<username>.github.io/<repo-name>`). You must tell Next.js what this path is.
-    *   Open `next.config.ts`.
-    *   Change the value of `basePath` from `'/nextn'` to `'/<your-repo-name>'`.
-    *   Commit and push this change.
-
-3.  **Enable GitHub Pages:**
-    *   In your GitHub repository, go to **Settings > Pages**.
-    *   Under "Build and deployment," set the **Source** to **GitHub Actions**.
-    *   The project includes a workflow file (`.github/workflows/deploy.yml`) that will automatically build your site and deploy it.
-
-4.  **Go Live:** After you push a change to your main branch, the GitHub Action will run. It may take a few minutes, and then your site will be live at the URL shown in the Pages settings.
