@@ -52,7 +52,7 @@ export default function Home() {
               GitHub Profile
             </a>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+          <Button asChild size="lg">
             <a href="https://linkedin.com/in/harsain" target="_blank" rel="noopener noreferrer">
               <Linkedin className="mr-2 h-4 w-4" />
               LinkedIn Profile
