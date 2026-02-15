@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { User, GraduationCap, Code2, Linkedin, Github, ExternalLink } from 'lucide-react';
+import { User, GraduationCap, CodeXml, Linkedin, Github, ExternalLink } from 'lucide-react';
 import { profileData, skills, experience, projects, blogs, interests } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { BlogPreviewCard } from '@/components/blog-preview-card';
@@ -10,7 +10,7 @@ import { BlogPreviewCard } from '@/components/blog-preview-card';
 const iconMap: { [key: string]: React.ElementType } = {
   User,
   GraduationCap,
-  Code2,
+  CodeXml,
 };
 
 
@@ -29,6 +29,7 @@ export default function Home() {
               width={128}
               height={128}
               priority
+              className="h-full w-full object-cover"
               data-ai-hint={avatarImage.imageHint}
             />
           )}

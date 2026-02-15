@@ -19,7 +19,7 @@ export const profileData = {
         description: 'M.S. Computer Science\nB.S. Computer Engineering',
       },
       {
-        icon: 'Code2',
+        icon: 'CodeXml',
         title: 'Expertise',
         description: 'Full Stack Architecture, System Design, Technical Leadership, Scalable Solutions.',
       }
