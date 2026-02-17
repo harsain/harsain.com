@@ -34,7 +34,7 @@ export function SiteHeader() {
           ))}
           <Button asChild className="ml-2 h-9 rounded-md px-4">
             <a href="https://linkedin.com/in/harsain" target="_blank" rel="noopener noreferrer">
-              Let's Connect
+              Let&apos;s Connect
             </a>
           </Button>
         </nav>
@@ -48,7 +48,7 @@ export function SiteHeader() {
             </SheetTrigger>
             <SheetContent side="left">
               <Link href="/" className="mb-6 flex items-center" onClick={() => setIsOpen(false)}>
-                 <span className="text-xl font-bold text-primary">Harsain</span>
+                <span className="text-xl font-bold text-primary">Harsain</span>
               </Link>
               <div className="flex flex-col gap-4">
                 {navLinks.map((link) => (
@@ -61,11 +61,11 @@ export function SiteHeader() {
                     {link.label}
                   </Link>
                 ))}
-                 <Button asChild className="mt-4">
-                    <a href="https://linkedin.com/in/harsain" target="_blank" rel="noopener noreferrer">
-                      Let's Connect
-                    </a>
-                  </Button>
+                <Button asChild className="mt-4">
+                  <a href="https://linkedin.com/in/harsain" target="_blank" rel="noopener noreferrer">
+                    Let&apos;s Connect
+                  </a>
+                </Button>
               </div>
             </SheetContent>
           </Sheet>

@@ -2,10 +2,9 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { User, GraduationCap, CodeXml, Linkedin, Github, ExternalLink } from 'lucide-react';
-import { profileData, skills, experience, projects, blogs, interests } from '@/lib/data';
+import { User, GraduationCap, CodeXml, Linkedin, Github } from 'lucide-react';
+import { profileData, skills, experience, interests } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { BlogPreviewCard } from '@/components/blog-preview-card';
 
 const iconMap: { [key: string]: React.ElementType } = {
   User,
@@ -40,7 +39,7 @@ export default function Home() {
           {profileData.title}<br />
           <span className="text-foreground">{profileData.subtitle}</span>
         </h1>
-        <p 
+        <p
           className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground"
           dangerouslySetInnerHTML={{ __html: profileData.summary }}
         >
@@ -65,8 +64,8 @@ export default function Home() {
       <section className="border-t-2 border-secondary py-20">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           {profileData.stats.map(stat => {
-             const Icon = iconMap[stat.icon];
-             return (
+            const Icon = iconMap[stat.icon];
+            return (
               <div key={stat.title}>
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-primary text-primary-foreground shadow-md">
                   {Icon && <Icon className="h-6 w-6" />}
@@ -80,41 +79,41 @@ export default function Home() {
           })}
         </div>
       </section>
-      
+
       {/* Technical Skills */}
       <section className="border-t-2 border-secondary py-20">
-         <div className="text-center">
-            <h2 className="text-3xl font-bold text-primary">Technical Arsenal</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">My preferred stack for building robust, scalable applications.</p>
-          </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-primary">Frontend</CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-wrap gap-2">
-                {skills.frontend.map(skill => <Badge key={skill} className="rounded-full bg-primary/10 py-1 px-3 font-medium text-primary hover:bg-primary/20">{skill}</Badge>)}
-              </CardContent>
-            </Card>
-             <Card>
-              <CardHeader>
-                <CardTitle className="text-primary">Backend</CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-wrap gap-2">
-                {skills.backend.map(skill => <Badge key={skill} className="rounded-full bg-primary/10 py-1 px-3 font-medium text-primary hover:bg-primary/20">{skill}</Badge>)}
-              </CardContent>
-            </Card>
-             <Card>
-              <CardHeader>
-                <CardTitle className="text-primary">Cloud & DevOps</CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-wrap gap-2">
-                {skills.devops.map(skill => <Badge key={skill} className="rounded-full bg-primary/10 py-1 px-3 font-medium text-primary hover:bg-primary/20">{skill}</Badge>)}
-              </CardContent>
-            </Card>
-          </div>
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-primary">Technical Arsenal</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">My preferred stack for building robust, scalable applications.</p>
+        </div>
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-primary">Frontend</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-wrap gap-2">
+              {skills.frontend.map(skill => <Badge key={skill} className="rounded-full bg-primary/10 py-1 px-3 font-medium text-primary hover:bg-primary/20">{skill}</Badge>)}
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-primary">Backend</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-wrap gap-2">
+              {skills.backend.map(skill => <Badge key={skill} className="rounded-full bg-primary/10 py-1 px-3 font-medium text-primary hover:bg-primary/20">{skill}</Badge>)}
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-primary">Cloud & DevOps</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-wrap gap-2">
+              {skills.devops.map(skill => <Badge key={skill} className="rounded-full bg-primary/10 py-1 px-3 font-medium text-primary hover:bg-primary/20">{skill}</Badge>)}
+            </CardContent>
+          </Card>
+        </div>
       </section>
-      
+
       {/* Experience Timeline */}
       <section id="experience" className="border-t-2 border-secondary py-20">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-3">
@@ -128,7 +127,7 @@ export default function Home() {
             <div className="relative">
               {experience.map((item, index) => (
                 <div key={item.title} className="relative pl-8 pb-12">
-                  {index < experience.length -1 && <div className="absolute left-3 top-2 h-full w-0.5 bg-secondary"></div>}
+                  {index < experience.length - 1 && <div className="absolute left-3 top-2 h-full w-0.5 bg-secondary"></div>}
                   <div className="absolute left-0 top-0 flex h-6 w-6 items-center justify-center rounded-full bg-background">
                     <div className="h-4 w-4 rounded-full border-4 border-primary bg-background"></div>
                   </div>
@@ -136,9 +135,9 @@ export default function Home() {
                   <h3 className="mt-1 text-xl font-semibold">{item.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
                   {item.tags.length > 0 && (
-                     <div className="mt-3 flex flex-wrap gap-2">
-                        {item.tags.map(tag => <Badge key={tag} variant="outline" className="rounded-full border-primary/50 text-primary">{tag}</Badge>)}
-                     </div>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {item.tags.map(tag => <Badge key={tag} variant="outline" className="rounded-full border-primary/50 text-primary">{tag}</Badge>)}
+                    </div>
                   )}
                 </div>
               ))}
@@ -149,14 +148,14 @@ export default function Home() {
 
       {/* Interests */}
       <section id="interests" className="border-t-2 border-secondary py-20">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-primary">Passions & Interests</h2>
-            <p className="mx-auto mt-4 max-w-lg text-muted-foreground">Beyond the terminal, I explore the world through sound, lenses, and logic.</p>
-          </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-            {interests.map(interest => {
-              const image = PlaceHolderImages.find(p => p.id === interest.imagePlaceholderId);
-              return (
+        <div className="text-center">
+          <h2 className="text-3xl font-bold text-primary">Passions & Interests</h2>
+          <p className="mx-auto mt-4 max-w-lg text-muted-foreground">Beyond the terminal, I explore the world through sound, lenses, and logic.</p>
+        </div>
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+          {interests.map(interest => {
+            const image = PlaceHolderImages.find(p => p.id === interest.imagePlaceholderId);
+            return (
               <Card key={interest.title}>
                 <CardContent className="p-0">
                   <div className="mb-6 h-48 w-full overflow-hidden rounded-md">
@@ -167,8 +166,8 @@ export default function Home() {
                 </CardContent>
               </Card>
             );
-            })}
-          </div>
+          })}
+        </div>
       </section>
     </div>
   );

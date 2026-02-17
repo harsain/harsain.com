@@ -6,7 +6,7 @@ export function SiteFooter() {
     <footer id="contact" className="mt-20 rounded-t-2xl bg-secondary py-20 px-6 text-center">
       <div className="container mx-auto max-w-4xl">
         <h2 className="mb-8 text-4xl font-bold text-foreground">
-          Let's build something great.
+          Let&apos;s build something great.
         </h2>
         <div className="mb-10 flex justify-center gap-4">
           <Button asChild size="lg">
