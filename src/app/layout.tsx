@@ -1,4 +1,4 @@
-import type {Metadata} from 'next';
+import type { Metadata } from 'next';
 import './globals.css';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
@@ -7,6 +7,12 @@ import { Toaster } from "@/components/ui/toaster"
 export const metadata: Metadata = {
   title: "Harsain - Principal Engineer",
   description: "Building scalable systems and leading technical teams. Specializing in cloud architecture, distributed systems, and engineering leadership.",
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
