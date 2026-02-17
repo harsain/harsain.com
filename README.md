@@ -1,5 +1,3 @@
-# Firebase Studio
+# Harsain.com
 
-This is a NextJS starter in Firebase Studio.
-
-To get started, take a look at src/app/page.tsx.
+using Next.js framework and deployed on Cloudflare pages

@@ -2,27 +2,27 @@ export const profileData = {
   name: 'Harsain',
   avatarImageId: 'hero-avatar',
   githubUrl: 'https://github.com/harsain',
-  experience: '10+ Years of Experience',
+  experience: '15+ Years of Experience',
   title: 'Principal Software Engineer &',
   subtitle: 'Technical Leader',
   summary:
-    'A technical leader with 10+ years of experience delivering enterprise-scale platforms for Tier-1 banking and global SaaS organizations. <br /> Deep expertise in technical strategy, AWS, event-driven microservices, and reliability engineering.',
+    'A technical leader with 15+ years of experience delivering enterprise-scale platforms for Tier-1 banking and global SaaS organizations. <br /> Deep expertise in technical strategy, AWS, event-driven microservices, and reliability engineering.',
   stats: [
-      {
-        icon: 'User',
-        title: 'Technical Leadership',
-        description: 'Domain ownership, roadmap definition, and architecture governance.',
-      },
-      {
-        icon: 'GraduationCap',
-        title: 'Education',
-        description: 'M.S. Computer Science\nB.S. Computer Engineering',
-      },
-      {
-        icon: 'CodeXml',
-        title: 'Distributed Systems',
-        description: 'Event-driven architecture, microservices, and asynchronous messaging patterns.',
-      }
+    {
+      icon: 'User',
+      title: 'Technical Leadership',
+      description: 'Domain ownership, roadmap definition, and architecture governance.',
+    },
+    {
+      icon: 'GraduationCap',
+      title: 'Education',
+      description: 'M.S. Computer Science\nB.S. Computer Engineering',
+    },
+    {
+      icon: 'CodeXml',
+      title: 'Distributed Systems',
+      description: 'Event-driven architecture, microservices, and asynchronous messaging patterns.',
+    }
   ]
 };
 
