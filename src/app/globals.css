@@ -15,7 +15,7 @@
     --secondary: 0 33% 89%;
     --secondary-foreground: 359 100% 58%;
     --muted: 0 0% 91%;
-    --muted-foreground: 0 0% 58%;
+    --muted-foreground: 0 0% 36%;
     --accent: 359 100% 58%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 100% 50%;
@@ -39,3 +39,16 @@
 html {
   scroll-behavior: smooth;
 }
+
+.prose-post { font-size: 1.075rem; line-height: 1.75; }
+.prose-post > * + * { margin-top: 1.25rem; }
+.prose-post h2 { font-size: 1.6rem; font-weight: 700; margin-top: 2.5rem; }
+.prose-post h3 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; }
+.prose-post a { color: hsl(var(--primary)); text-decoration: underline; }
+.prose-post ul { list-style: disc; padding-left: 1.5rem; }
+.prose-post ol { list-style: decimal; padding-left: 1.5rem; }
+.prose-post blockquote { border-left: 4px solid hsl(var(--primary)); padding-left: 1rem; color: hsl(var(--muted-foreground)); }
+.prose-post code { background: hsl(var(--secondary)); padding: 0.1rem 0.35rem; border-radius: 4px; font-size: 0.9em; }
+.prose-post pre { background: #1b1b1f; color: #f3f3f3; padding: 1rem; border-radius: 8px; overflow-x: auto; }
+.prose-post pre code { background: none; padding: 0; }
+.prose-post img { max-width: 100%; border-radius: 8px; }

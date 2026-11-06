@@ -5,6 +5,9 @@ import { Badge } from '@/components/ui/badge';
 import { User, GraduationCap, CodeXml, Linkedin, Github } from 'lucide-react';
 import { profileData, skills, experience, interests } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Link from 'next/link';
+import { getPosts } from '@/lib/blog';
+import { PostCard } from '@/components/post-card';
 
 const iconMap: { [key: string]: React.ElementType } = {
   User,
@@ -14,6 +17,7 @@ const iconMap: { [key: string]: React.ElementType } = {
 
 
 export default function Home() {
+  const latestPosts = getPosts().slice(0, 3);
   const avatarImage = PlaceHolderImages.find(p => p.id === profileData.avatarImageId);
 
   return (
@@ -39,10 +43,12 @@ export default function Home() {
           {profileData.title}<br />
           <span className="text-foreground">{profileData.subtitle}</span>
         </h1>
-        <p
-          className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground"
-          dangerouslySetInnerHTML={{ __html: profileData.summary }}
-        >
+        <p className="mt-5 text-sm font-medium text-foreground">
+          {profileData.currentRole.title} · {profileData.currentRole.company}
+          <span className="text-muted-foreground"> · since {profileData.currentRole.since}</span>
+        </p>
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+          {profileData.summary}
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <Button asChild size="lg">
@@ -143,6 +149,17 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Latest writing */}
+      <section id="blog" className="border-t-2 border-secondary py-20">
+        <div className="flex items-end justify-between">
+          <h2 className="text-3xl font-bold text-primary">Latest Writing</h2>
+          <Link href="/blog/" className="text-sm font-semibold text-primary hover:underline">All posts →</Link>
+        </div>
+        <div className="mt-8 grid gap-6">
+          {latestPosts.map((p) => <PostCard key={p.slug} post={p} />)}
         </div>
       </section>
 

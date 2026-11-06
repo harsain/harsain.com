@@ -8,9 +8,10 @@ import { Menu } from 'lucide-react';
 import { useState } from 'react';
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#interests', label: 'Interests' },
+  { href: '/#about', label: 'About' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/blog/', label: 'Blog' },
+  { href: '/#interests', label: 'Interests' },
 ];
 
 export function SiteHeader() {

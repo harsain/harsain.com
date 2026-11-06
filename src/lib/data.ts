@@ -3,10 +3,15 @@ export const profileData = {
   avatarImageId: 'hero-avatar',
   githubUrl: 'https://github.com/harsain',
   experience: '15+ Years of Experience',
-  title: 'Principal Software Engineer &',
-  subtitle: 'Technical Leader',
+  title: 'Principal Engineer,',
+  subtitle: 'eCommerce at CBA',
+  currentRole: {
+    title: 'Principal Engineer, eCommerce Crew',
+    company: 'Commonwealth Bank of Australia',
+    since: 'Aug 2026',
+  },
   summary:
-    'A technical leader with 15+ years of experience delivering enterprise-scale platforms for Tier-1 banking and global SaaS organizations. <br /> Deep expertise in technical strategy, AWS, event-driven microservices, and reliability engineering.',
+    'A technical leader with 15+ years delivering enterprise-scale platforms for Tier-1 banks and global SaaS companies. Deep expertise in technical strategy, AWS, event-driven microservices, and reliability engineering.',
   stats: [
     {
       icon: 'User',
@@ -34,7 +39,13 @@ export const skills = {
 
 export const experience = [
   {
-    date: 'Nov 2022 - Present',
+    date: 'Aug 2026 - Present',
+    title: 'Principal Engineer, eCommerce Crew | Commonwealth Bank of Australia',
+    description: 'Setting technical direction for the eCommerce Crew: architecture, platform strategy and engineering standards for customer-facing commerce experiences at scale.',
+    tags: ['Leadership', 'Architecture', 'eCommerce']
+  },
+  {
+    date: 'Nov 2022 - Jul 2026',
     title: 'Principal Engineer | National Australia Bank',
     description: 'Owning technical strategy, architecture, and engineering roadmap for the Loyalty sub-domain. Leading platform modernisation into event-driven, cloud-native microservices.',
     tags: ['Leadership', 'Architecture', 'AWS']
