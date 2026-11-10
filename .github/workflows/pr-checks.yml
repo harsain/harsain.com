@@ -1,0 +1,47 @@
+# Runs on every pull request into main. It never deploys: the deploy workflow
+# (nextjs.yml) only runs after a merge to main.
+name: PR checks
+
+on:
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Security audit (fails on high or critical)
+        run: npm audit --audit-level=high
+      - name: Lint
+        run: npm run lint
+      - name: Type check
+        run: npm run typecheck
+      - name: Build
+        run: npm run build
+      - name: Check build output
+        run: |
+          test -f out/index.html
+          test -f out/Harsain_Kapoor_Resume.pdf
+          test -f out/avatar.jpg
+      - name: Keep the phone number out of the source
+        run: |
+          if grep -rIE "0451 ?091 ?986|\+?61 ?451 ?091 ?986" src content public 2>/dev/null; then
+            echo "A phone number was found in the source. Remove it before merging."
+            exit 1
+          fi

@@ -1,12 +1,30 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+import { Azeret_Mono, Spectral, Xanh_Mono } from 'next/font/google';
 import './globals.css';
 import { SiteHeader } from '@/components/site-header';
-import { SiteFooter } from '@/components/site-footer';
-import { Toaster } from "@/components/ui/toaster"
+import { StatusBar } from '@/components/status-bar';
+import { profile, site } from '@/lib/data';
+
+const display = Xanh_Mono({ weight: '400', style: ['normal', 'italic'], subsets: ['latin'], variable: '--font-display', display: 'swap' });
+const body = Spectral({ weight: ['400', '600'], style: ['normal', 'italic'], subsets: ['latin'], variable: '--font-body', display: 'swap' });
+const mono = Azeret_Mono({ weight: ['400', '500', '700'], subsets: ['latin'], variable: '--font-mono', display: 'swap' });
+
+const title = `${profile.name} | Principal Engineer, eCommerce at CBA`;
 
 export const metadata: Metadata = {
-  title: "Harsain Kapoor - Principal Engineer, eCommerce at CBA",
-  description: "Building scalable systems and leading technical teams. Specializing in cloud architecture, distributed systems, and engineering leadership.",
+  metadataBase: new URL(site.url),
+  title: { default: title, template: `%s | ${profile.name}` },
+  description: profile.description,
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'profile',
+    url: site.url,
+    siteName: profile.name,
+    title,
+    description: profile.description,
+    images: [{ url: '/avatar.jpg', width: 700, height: 700, alt: `Portrait of ${profile.name}` }],
+  },
+  twitter: { card: 'summary', title, description: profile.description, images: ['/avatar.jpg'] },
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
@@ -15,25 +33,28 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f4f5f8' },
+    { media: '(prefers-color-scheme: dark)', color: '#1a1b26' },
+  ],
+};
+
+// Runs before first paint so the saved theme applies without a flash. Light is the default.
+const themeScript = `try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t==='dark'?'dark':'light'}catch(e){document.documentElement.dataset.theme='light'}`;
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="en" data-theme="light" suppressHydrationWarning className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="font-body antialiased">
-        <div className="relative flex min-h-dvh flex-col bg-background">
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </div>
-        <Toaster />
+      <body>
+        <SiteHeader />
+        <main>{children}</main>
+        <StatusBar />
       </body>
     </html>
   );

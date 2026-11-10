@@ -1,58 +1,41 @@
-# How to Update Your Portfolio Content
+# How to Update Your Site
 
-This guide explains the basic structure of your portfolio site so you can easily update its content. Most of the content is centralized in a few key files.
+The site is a static Next.js export. Almost everything you see is driven by one data file.
 
-## 1. Primary Content File: `src/lib/data.ts`
+## 1. Content: `src/lib/data.ts`
 
-This is the most important file for content updates. Almost all the text on your site—your name, summary, skills, experience, and project descriptions—is stored here as a JavaScript object.
+Roles (the "decision records"), the impact numbers, Base2 Labs products, capabilities, stack and credentials all live here.
 
-To change any text, simply open this file and edit the values within the `profileData`, `skills`, `experience`, and `projects` objects.
+- **Add or change a role:** edit the `adrs` array. It is newest first; each entry supersedes the one below it. Fields: `num`, `title`, `org`, `role`, `period`, `status` (`'accepted'` for the current role, `'superseded'` for the rest), `body`, optional `consequence` (a measurable result), optional `items` (key initiatives, with `listLabel`), `tags`, `chain`, and `commit` (used by the git log view).
+- **Add a Labs product:** add an entry to `labs` with `stage: 'private'` or `'beta'`.
+- **Headline, summary, contact links:** `profile` and `site` at the top of the file.
 
-**Example: Changing your title**
+If a field is optional and left out, that part of the card simply doesn't appear.
 
-```typescript
-// src/lib/data.ts
+## 2. Avatar
 
-export const profileData = {
-  // ...
-  title: 'Your New Title Here', // <-- Edit this line
-  subtitle: 'Your new subtitle',
-  // ...
-};
+Replace `public/avatar.jpg` (a square image works best). It is used on the page and as the social-share image.
+
+## 3. Theme
+
+Colours and layout are in `src/app/globals.css`. The light and dark palettes are the two sets of variables at the top. Light is the default; a visitor's choice is remembered in their browser.
+
+## 4. Writing posts (optional)
+
+Add a Markdown file to `content/blog/` with this at the top:
+
+```
+---
+title: "Your title"
+date: "2026-01-31"
+summary: "One sentence."
+tags: ["Architecture"]
+---
 ```
 
-## 2. Image File: `src/lib/placeholder-images.json`
+Add `externalUrl: "https://..."` to link out to a post published elsewhere. A "notes" link appears in the header automatically once at least one post exists. With no posts, the blog pages stay out of the navigation and the sitemap.
 
-All images used on the site are defined in this JSON file. Each image has an `id`, a `description`, a `imageUrl`, and an `imageHint`.
-
-To change an image:
-
-1.  Find the image you want to replace in `src/lib/placeholder-images.json` (e.g., the one with `id: "hero-avatar"`).
-2.  Replace the `imageUrl` with a direct URL to your new image.
-
-```json
-// src/lib/placeholder-images.json
-{
-  "placeholderImages": [
-    {
-      "id": "hero-avatar",
-      "description": "Avatar for Harsain",
-      "imageUrl": "https://your-new-image-url.com/image.jpg", // <-- Replace this URL
-      "imageHint": "professional portrait"
-    },
-    // ... other images
-  ]
-}
-```
-
-## 3. Navigation and Social Links
-
--   **Header Links**: The main navigation links at the top of the page (`About`, `Experience`, etc.) are in `src/components/site-header.tsx`.
--   **Footer Links**: The social media and contact links in the footer are in `src/components/site-footer.tsx`.
-
-You can edit the `href` (the URL) and the `label` (the visible text) in these files.
-
-## 4. Deploying to GitHub Pages (Static Hosting)
+## 5. Deploying to GitHub Pages (Static Hosting)
 
 This project is now configured to be deployed as a static site on GitHub Pages.
 

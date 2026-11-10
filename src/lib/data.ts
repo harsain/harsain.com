@@ -1,95 +1,303 @@
-export const profileData = {
-  name: 'Harsain',
-  avatarImageId: 'hero-avatar',
-  githubUrl: 'https://github.com/harsain',
-  experience: '15+ Years of Experience',
-  title: 'Principal Engineer,',
-  subtitle: 'eCommerce at CBA',
-  currentRole: {
-    title: 'Principal Engineer, eCommerce Crew',
-    company: 'Commonwealth Bank of Australia',
-    since: 'Aug 2026',
-  },
-  summary:
-    'A technical leader with 15+ years delivering enterprise-scale platforms for Tier-1 banks and global SaaS companies. Deep expertise in technical strategy, AWS, event-driven microservices, and reliability engineering.',
-  stats: [
-    {
-      icon: 'User',
-      title: 'Technical Leadership',
-      description: 'Domain ownership, roadmap definition, and architecture governance.',
-    },
-    {
-      icon: 'GraduationCap',
-      title: 'Education',
-      description: 'M.S. Computer Science\nB.S. Computer Engineering',
-    },
-    {
-      icon: 'CodeXml',
-      title: 'Distributed Systems',
-      description: 'Event-driven architecture, microservices, and asynchronous messaging patterns.',
-    }
-  ]
+// All site content lives here. Edit this file to change what the site says.
+
+export const site = {
+  url: 'https://harsain.com',
+  name: 'Harsain Kapoor',
+  email: 'harsain@gmail.com',
+  linkedin: 'https://linkedin.com/in/harsain',
+  github: 'https://github.com/harsain',
+  base2labs: 'https://base2labs.tech',
+  resume: '/Harsain_Kapoor_Resume.pdf',
 };
 
-export const skills = {
-  frontend: ['TypeScript', 'React', 'Next.js', 'React Native', 'JavaScript'],
-  backend: ['Java', 'Golang', 'Python', 'Node.js', 'Spring Boot', 'Kafka'],
-  devops: ['AWS', 'Kubernetes', 'Docker', 'Terraform', 'CI/CD', 'Jenkins'],
+export const profile = {
+  name: 'Harsain Kapoor',
+  headline: 'I make the decisions that are expensive to reverse.',
+  tldr: "Principal Engineer with 15+ years designing and delivering large-scale distributed systems across Tier-1 banking, global SaaS and AI-enabled products. Today at Commonwealth Bank I lead card-not-present payment acceptance, and I'm starting and leading agentic ecommerce for the bank. Melbourne.",
+  role: 'Principal Engineer, eCommerce Crew',
+  roleNote: 'Payment Acceptance',
+  org: 'Commonwealth Bank of Australia',
+  location: 'Melbourne, Australia',
+  since: '2026-08',
+  experience: '15+',
+  focus: ['payments', 'distributed systems', 'event-driven architecture', 'agentic AI', 'technical leadership'],
+  labs: 'Base2 Labs',
+  description:
+    'Principal Engineer on the eCommerce Crew at Commonwealth Bank, Melbourne. 15+ years building distributed systems across Tier-1 banking, global SaaS and AI-enabled products. Founder of Base2 Labs.',
 };
 
-export const experience = [
+export const impact = [
+  { key: 'nab_loyalty', value: '3M+', text: 'cardholders, millions of loyalty events and transactions a year' },
+  { key: 'zendesk_messaging', value: '5M+', text: 'users across APAC, EMEA and North America' },
+  { key: 'citi_loyalty_migration', value: 'zero downtime', text: 'millions of active accounts', valueKind: 'ok' as const },
+];
+
+export type AdrItem = { name: string; desc?: string };
+
+export type Adr = {
+  num: string;
+  short: string;
+  title: string;
+  org: string;
+  role: string;
+  period: string;
+  status: 'accepted' | 'superseded';
+  body: string;
+  consequence?: string;
+  stats?: { value: string; label: string }[];
+  listLabel?: string;
+  items?: AdrItem[];
+  link?: { href: string; label: string };
+  tags: string[];
+  chain: string;
+  commit: { tag: string; subject: string };
+};
+
+// Newest first. Each record supersedes the one below it.
+export const adrs: Adr[] = [
   {
-    date: 'Aug 2026 - Present',
-    title: 'Principal Engineer, eCommerce Crew | Commonwealth Bank of Australia',
-    description: 'Setting technical direction for the eCommerce Crew: architecture, platform strategy and engineering standards for customer-facing commerce experiences at scale.',
-    tags: ['Leadership', 'Architecture', 'eCommerce']
+    num: '0005',
+    short: 'CBA',
+    title: 'Own card-not-present payment acceptance and start agentic commerce at CBA',
+    org: 'Commonwealth Bank of Australia',
+    role: 'Principal Engineer, eCommerce Crew (Payment Acceptance)',
+    period: '2026-08 → now',
+    status: 'accepted',
+    body: 'Principal Engineer on the eCommerce Crew within Payment Acceptance, Everyday Business Banking. The crew owns all card-not-present payment flows for merchants: online and IVR payment acceptance, integrated with multiple payment gateways and wallets, with fraud and 3DS checks.',
+    listLabel: 'WHAT THE CREW OWNS',
+    items: [
+      { name: 'Online and IVR acceptance', desc: ': every card-not-present payment flow for CBA merchants.' },
+      {
+        name: 'Platform consolidation',
+        desc: ': supporting and evolving an acquired payments platform for existing customers while migrating CBA merchants onto the new unified eCommerce payments platform.',
+      },
+      { name: 'Gateway and wallet integrations', desc: ': multiple payment gateways, wallets and buy-now-pay-later providers.' },
+      { name: 'Fraud and authentication', desc: ': fraud screening and 3DS checks across payment flows.' },
+      { name: 'Agentic ecommerce', desc: ': starting and leading the agentic commerce capability for CBA.' },
+    ],
+    link: {
+      href: 'https://www.commbank.com.au/business/payments/take-online-payments/connected-payments.html',
+      label: 'Related: CommBank Connected Payments (coming soon)',
+    },
+    tags: ['Payments', 'Agentic AI', '3DS', 'Fraud', 'Architecture', 'Leadership'],
+    chain: 'Supersedes ADR-0004 · current',
+    commit: { tag: 'v5.0.0', subject: 'feat(cba): lead card-not-present payments and agentic commerce' },
   },
   {
-    date: 'Nov 2022 - Jul 2026',
-    title: 'Principal Engineer | National Australia Bank',
-    description: 'Owning technical strategy, architecture, and engineering roadmap for the Loyalty sub-domain. Leading platform modernisation into event-driven, cloud-native microservices.',
-    tags: ['Leadership', 'Architecture', 'AWS']
+    num: '0004',
+    short: 'NAB',
+    title: 'Decompose legacy loyalty into event-driven, cloud-native services',
+    org: 'National Australia Bank',
+    role: 'Principal Engineer, Loyalty',
+    period: '2022-11 → 2026-07',
+    status: 'superseded',
+    body: 'Defined the technical strategy and architecture roadmap for NAB Loyalty. Led the decomposition of legacy loyalty capabilities into event-driven services on Kafka and AWS, with domain boundaries, API contracts and event schemas across banking systems. Partnered with product, risk and compliance, and mentored senior and junior engineers.',
+    consequence:
+      'A platform supporting 3M+ cardholders and millions of loyalty events and transactions a year. Improved scalability, resilience and independent team delivery.',
+    stats: [
+      { value: '3M+', label: 'cardholders' },
+      { value: 'Millions', label: 'loyalty events and transactions a year' },
+      { value: 'Zero', label: 'downtime on the card migration' },
+    ],
+    listLabel: 'KEY INITIATIVES',
+    items: [
+      {
+        name: 'Citi credit card loyalty migration to NAB',
+        desc: ': led architecture and execution of a high-concurrency, large-scale migration for millions of active accounts with zero downtime, safeguarding enterprise revenue and regulatory compliance.',
+      },
+      { name: 'Personal Cards loyalty offers platform', desc: ': an event-driven offers platform built for high throughput and extensibility.' },
+      { name: 'Buy Now Pay Later', desc: ': contributed to a high-availability transactional platform supporting rapid growth.' },
+      { name: 'Credit card instalments', desc: ': core payments capability aligned with regulatory and risk controls.' },
+    ],
+    tags: ['AWS', 'Java (Spring Boot)', 'React', 'PostgreSQL', 'Kafka', 'Terraform'],
+    chain: 'Supersedes ADR-0003 · superseded by ADR-0005',
+    commit: { tag: 'v4.0.0', subject: 'feat(nab): decompose Loyalty into event-driven services' },
   },
   {
-    date: 'Sep 2019 - Nov 2022',
-    title: 'Senior Staff Engineer | Zendesk',
-    description: 'Defined and executed the technical vision for global customer messaging platforms. Designed highly available, distributed systems supporting millions of users.',
-    tags: ['Distributed Systems', 'Kafka', 'TypeScript']
+    num: '0003',
+    short: 'Zendesk',
+    title: 'Architect globally distributed messaging for 5M+ users',
+    org: 'Zendesk',
+    role: 'Senior Staff Engineer',
+    period: '2019-09 → 2022-11',
+    status: 'superseded',
+    body: 'Architected scalable event-streaming and message-processing platforms for real-time customer engagement across channels. Led decisions on service decomposition, fault tolerance and reliability, championed reliability and performance-testing frameworks for tier-0 infrastructure, and served as senior technical escalation point for complex incidents.',
+    consequence: 'Messaging platforms serving 5M+ users across APAC, EMEA and North America, with high availability and low latency.',
+    stats: [
+      { value: '5M+', label: 'users' },
+      { value: '3', label: 'regions: APAC, EMEA and North America' },
+    ],
+    listLabel: 'KEY PLATFORMS',
+    items: [
+      { name: 'Business Messaging', desc: ': real-time, scalable messaging infrastructure.' },
+      { name: 'Public Social Messaging', desc: ': large-scale social channel ingestion and processing.' },
+      { name: 'Sandbox Platform', desc: ': multi-language experimentation platform enabling rapid innovation.' },
+    ],
+    tags: ['TypeScript', 'Java', 'Kafka', 'AWS', 'MySQL', 'Redis', 'Golang', 'Python'],
+    chain: 'Supersedes ADR-0002 · superseded by ADR-0004',
+    commit: { tag: 'v3.0.0', subject: 'feat(zendesk): architect global messaging platforms' },
   },
   {
-    date: 'Sep 2018 - Sep 2019',
-    title: 'Senior Consultant & Team Lead | National Australia Bank',
-    description: 'Led teams delivering customer-facing digital platforms. Established engineering standards and provided hands-on leadership.',
-    tags: ['React', 'Node.js', 'Team Lead']
+    num: '0002',
+    short: 'NAB',
+    title: 'Lead teams delivering customer-facing digital platforms',
+    org: 'National Australia Bank',
+    role: 'Senior Consultant Software Engineer / Team Lead',
+    period: '2018-09 → 2019-09',
+    status: 'superseded',
+    body: 'Led teams delivering customer-facing digital platforms, established engineering standards and best practices, and provided hands-on leadership, production support and stakeholder alignment.',
+    listLabel: 'KEY PROJECTS',
+    items: [{ name: 'Customer on a Page' }, { name: 'Debt Servicing Platform' }, { name: 'Home Loan Pricing Engine' }],
+    tags: ['AWS (Lambda, ECS, EC2)', 'Java', 'Node.js', 'React', 'Terraform', 'PostgreSQL', 'Oracle'],
+    chain: 'Supersedes ADR-0001 · superseded by ADR-0003',
+    commit: { tag: 'v2.0.0', subject: 'feat(nab): lead customer-facing delivery teams' },
   },
   {
-    date: 'Mar 2017 - Sep 2018',
-    title: 'Senior Microservices Engineer | Versent',
-    description: 'Designed and built cloud-native microservices platforms for clients, advising on event choreography and orchestration patterns.',
-    tags: ['Microservices', 'Consulting', 'Cloud-Native']
+    num: '0001',
+    short: 'Versent',
+    title: 'Build cloud-native microservices platforms for clients',
+    org: 'Versent',
+    role: 'Senior Microservices Engineer',
+    period: '2017-03 → 2018-09',
+    status: 'superseded',
+    body: 'Designed and built cloud-native microservices platforms for clients, and advised them on event choreography versus orchestration patterns.',
+    listLabel: 'CLIENTS',
+    items: [{ name: 'Transurban' }, { name: 'Vocus' }],
+    tags: ['Microservices', 'Cloud-native', 'Consulting'],
+    chain: 'Supersedes ADR-0000 · superseded by ADR-0002',
+    commit: { tag: 'v1.0.0', subject: 'feat(versent): build cloud-native microservices platforms' },
+  },
+  {
+    num: '0000',
+    short: 'Early career',
+    title: 'Build full-stack, API and mobile platforms, and lead delivery',
+    org: 'Tundra Interactive · Ladoo · IP Health and earlier',
+    role: 'Senior Software Engineer / Technical Lead',
+    period: '2011 → 2017',
+    status: 'superseded',
+    body: 'Full-stack development, architecture design, API platforms, and mobile and web solutions across consultancies, startups and enterprise projects. Designed a service-oriented, API-first system from scratch, and led teams, sprint planning and engineering delivery.',
+    tags: ['Full-stack', 'API platforms', 'Mobile', 'Web'],
+    chain: 'First record · superseded by ADR-0001',
+    commit: { tag: 'v0.1.0', subject: 'feat(early): ship full-stack and API platforms' },
   },
 ];
 
-export const projects = [
-];
+export const labsIntro =
+  "is my independent engineering studio, building AI-native, privacy-first products and systems: AI-native applications, distributed systems, developer tooling and workflow automation. I'm the founder and principal engineer. Most products are private and releasing soon, and the newest are about to enter beta.";
 
-export const blogs = [
-];
+export type Lab = { path: string; name: string; tagline: string; desc: string; stage: 'private' | 'beta' };
 
-export const interests = [
+export const labs: Lab[] = [
   {
-    title: 'Coding',
-    description: 'Crafting elegant solutions to complex problems. For me, engineering is as much an art as it is a science.',
-    imagePlaceholderId: 'interest-coding',
+    path: 'labs/growli',
+    name: 'Growli',
+    tagline: 'Parenting intelligence platform',
+    desc: 'AI-assisted parenting and early-childhood insights platform focused on structured data collection and intelligent pattern detection.',
+    stage: 'private',
   },
   {
-    title: 'Music',
-    description: 'Finding rhythm and harmony in noise. Music fuels my creativity and helps me find flow.',
-    imagePlaceholderId: 'interest-music',
+    path: 'labs/draftlog',
+    name: 'DraftLog',
+    tagline: 'AI-powered execution workspace for teams',
+    desc: 'AI-enabled product and engineering workspace designed to accelerate ideation, planning and execution workflows.',
+    stage: 'private',
   },
   {
-    title: 'Cycling',
-    description: 'Embracing the challenge and freedom of the open road. Cycling is my meditation and my adventure.',
-    imagePlaceholderId: 'interest-cycling',
-  }
+    path: 'labs/reinvent-property',
+    name: 'Reinvent Property',
+    tagline: 'Property transaction modernisation',
+    desc: 'Exploring secure multi-party workflows, verification systems and trusted digital interactions for property transactions in Australia.',
+    stage: 'private',
+  },
+  {
+    path: 'labs/kelpie',
+    name: 'Kelpie',
+    tagline: 'Email for iOS, macOS and Android',
+    desc: 'A cross-platform email client starting with Gmail, with rich markdown and diagrams, inline drawing, an alias picker and draft sync.',
+    stage: 'beta',
+  },
+  {
+    path: 'labs/pithly',
+    name: 'Pithly',
+    tagline: 'A private to-do app that runs on your phone',
+    desc: 'Type, talk or photograph a messy note and Pithly turns it into ranked next actions, using AI that runs on the device. No account, no servers.',
+    stage: 'beta',
+  },
+  {
+    path: 'labs/kinflo',
+    name: 'Kinflo',
+    tagline: 'Family, in flow.',
+    desc: 'A family organiser for shared calendars, chores, lists, meal planning, chat and location, with an assistant that runs on the phone where possible.',
+    stage: 'beta',
+  },
+];
+
+export const capabilities = [
+  { title: 'AI platforms and intelligent systems', text: 'RAG, AI agents, LLM integration, workflow automation, intelligent developer tooling.' },
+  { title: 'Technical leadership and strategy', text: 'Domain ownership, roadmap definition, architecture governance.' },
+  { title: 'Distributed systems', text: 'Event-driven systems, microservices, asynchronous messaging.' },
+  { title: 'Platform engineering', text: 'Cloud-native platforms, AWS, infrastructure as code, Kubernetes, reliability and scalability.' },
+  { title: 'Engineering excellence', text: 'Dev standards, CI/CD, observability, quality and resilience.' },
+  { title: 'Stakeholder influence', text: 'Executive, product, architecture and cross-organisation alignment.' },
+];
+
+export const stack: Record<string, string[]> = {
+  languages: ['Java', 'Golang', 'Python', 'TypeScript', 'JavaScript'],
+  frameworks: ['Spring Boot', 'Vert.x', 'Quarkus', 'React', 'React Native', 'Node.js', 'Next.js', 'Flask'],
+  data_messaging: ['PostgreSQL', 'MySQL', 'DynamoDB', 'Elasticsearch', 'Kafka', 'Redis', 'SQS', 'SNS', 'Kinesis', 'RabbitMQ'],
+  cloud_devops: ['AWS (EC2, ECS, EKS, Lambda, S3)', 'Terraform', 'CloudFormation', 'Docker', 'Kubernetes'],
+  architecture: ['Microservices', 'Event-driven architecture', 'REST', 'GraphQL'],
+  delivery: ['CI/CD (Jenkins)', 'Agile', 'Scrum', 'Kanban'],
+  ai: ['RAG architectures', 'AI agent design', 'MCP integrations', 'LLM-assisted SDLC'],
+};
+
+export const credentials = {
+  education: [
+    { degree: 'Master of Computer Science (Web Computing)', school: 'RMIT University, Melbourne', years: '2011–2013' },
+    { degree: 'Bachelor of Engineering, Computer Science', school: 'Pune Institute of Computer Technology', years: '2005–2009' },
+  ],
+  certification: 'AI Agent Fundamentals (Academy Accreditation)',
+  training: ['AI/ML', 'Apache Kafka', 'Elasticsearch', 'AWS', 'TDD/BDD'],
+  languages: ['English', 'Hindi', 'Punjabi'],
+};
+
+export type Review = { name: string; role: string; relation: string; date: string; quote: string };
+
+export const reviewsIntro = 'Four of the twelve recommendations on LinkedIn, in the words of the people who wrote them.';
+export const reviewsCount = 12;
+
+// Verbatim excerpts from LinkedIn recommendations. The first one is shown larger.
+export const reviews: Review[] = [
+  {
+    name: 'Stephanie Ross',
+    role: 'Associate Director, Operations',
+    relation: 'worked on the same team',
+    date: 'Mar 2017',
+    quote:
+      "Harsain and I worked as a close-knit tech team to deliver an API-first custom built marketplace. This project was a complete success due to Harsain's thoroughly planned server architecture and API structure. Issues and risks were highlighted, discussed and resolved before we began on development.",
+  },
+  {
+    name: 'John Iaria',
+    role: 'Senior Software Developer / Development Team Lead',
+    relation: 'managed Harsain directly',
+    date: 'Nov 2014',
+    quote:
+      'During this time he was responsible for assessing various development technologies and choosing the toolsets that would become the standard platform for all our mobile application development. He was also responsible for leading the mobile platform development effort and mentoring other team members.',
+  },
+  {
+    name: 'Tom Gojrzewski',
+    role: 'Security, Product Owner',
+    relation: "Harsain's client",
+    date: 'Jun 2013',
+    quote:
+      'His knowledge goes beyond code cutting and he is not your typical developer. Harsain communicates well with the team and has the capacity to be a team lead and an architect of the solution.',
+  },
+  {
+    name: 'Ben Stringer',
+    role: 'Principal Architect, Culture Amp',
+    relation: 'managed Harsain directly',
+    date: 'Jul 2018',
+    quote:
+      "Harsain is an experienced and passionate professional with an eye for detail and a focus on good design. He doesn't settle for mediocre, and will challenge ideas and approaches to chase after the best result.",
+  },
 ];
