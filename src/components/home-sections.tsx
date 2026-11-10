@@ -31,20 +31,28 @@ export function ReadmeCard() {
   );
 }
 
-/** Right rail: the numbers, as YAML. */
+/** Right rail: the numbers, as measurable tiles (the YAML keys stay as small labels). */
 export function ImpactBlock() {
   return (
-    <CodeBox file="impact.yaml" className="rv" style={{ '--d': '.75s' } as React.CSSProperties}>
-      <L><K>experience</K>: <N>{profile.experience}</N> years</L>
-      <L><K>scale</K>:</L>
-      {impact.map((row) => (
-        <L key={row.key} i={1}>
-          <K>{row.key}</K>: {row.valueKind === 'ok' ? <S>{row.value}</S> : <N>{row.value}</N>}
-          {row.valueKind === 'ok' ? ', ' : ' '}
-          {row.text}
-        </L>
-      ))}
-    </CodeBox>
+    <div className="codex rv" style={{ '--d': '.75s' } as React.CSSProperties}>
+      <div className="codeh">
+        <span>impact.yaml</span>
+      </div>
+      <div className="stat-rows">
+        <div className="stat-row">
+          <div className="stat-key">experience</div>
+          <div className="stat-big">{profile.experience}</div>
+          <div className="stat-text">years</div>
+        </div>
+        {impact.map((row) => (
+          <div key={row.key} className="stat-row">
+            <div className="stat-key">{row.key}</div>
+            <div className={`stat-big ${row.valueKind === 'ok' ? 'ok' : ''}`}>{row.value}</div>
+            <div className="stat-text">{row.text}</div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -54,18 +62,26 @@ export function Labs() {
       <h2 id="labs" className="h2 scroll-mt"># Labs</h2>
       <p className="lead-p">
         <b style={{ fontWeight: 600 }}>Base2 Labs</b> (Engineering for Humanity) {labsIntro}{' '}
-        <a href={site.base2labs} target="_blank" rel="noopener noreferrer" className="mono" style={{ fontSize: 14 }}>
+        <a href={site.base2labs} target="_blank" rel="noopener noreferrer" className="inline-link">
           base2labs.tech →
         </a>
       </p>
       <div className="grid-auto">
         {labs.map((l) => (
           <div key={l.path} className="cardx">
-            <div className="path">{l.path}</div>
+            <div className="lab-top">
+              <span className={`lab-ic ${l.stage === 'beta' ? 'beta' : ''}`} aria-hidden="true">
+                {l.name.charAt(0)}
+              </span>
+              <span className="path">{l.path}</span>
+            </div>
             <div className="name">{l.name}</div>
             <div className="tag">{l.tagline}</div>
             <p>{l.desc}</p>
-            <span className={`badge ${l.stage === 'beta' ? 'beta' : ''}`}>{l.stage === 'beta' ? 'BETA · COMING SOON' : 'PRIVATE · RELEASING SOON'}</span>
+            <span className={`badge ${l.stage === 'beta' ? 'beta' : ''}`}>
+              <i aria-hidden="true" />
+              {l.stage === 'beta' ? 'BETA · COMING SOON' : 'PRIVATE · RELEASING SOON'}
+            </span>
           </div>
         ))}
       </div>

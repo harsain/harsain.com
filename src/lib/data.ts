@@ -43,6 +43,7 @@ export type Adr = {
   status: 'accepted' | 'superseded';
   body: string;
   consequence?: string;
+  stats?: { value: string; label: string }[];
   listLabel?: string;
   items?: AdrItem[];
   link?: { href: string; label: string };
@@ -92,6 +93,11 @@ export const adrs: Adr[] = [
     body: 'Defined the technical strategy and architecture roadmap for NAB Loyalty. Led the decomposition of legacy loyalty capabilities into event-driven services on Kafka and AWS, with domain boundaries, API contracts and event schemas across banking systems. Partnered with product, risk and compliance, and mentored senior and junior engineers.',
     consequence:
       'A platform supporting 3M+ cardholders and millions of loyalty events and transactions a year. Improved scalability, resilience and independent team delivery.',
+    stats: [
+      { value: '3M+', label: 'cardholders' },
+      { value: 'Millions', label: 'loyalty events and transactions a year' },
+      { value: 'Zero', label: 'downtime on the card migration' },
+    ],
     listLabel: 'KEY INITIATIVES',
     items: [
       {
@@ -116,6 +122,10 @@ export const adrs: Adr[] = [
     status: 'superseded',
     body: 'Architected scalable event-streaming and message-processing platforms for real-time customer engagement across channels. Led decisions on service decomposition, fault tolerance and reliability, championed reliability and performance-testing frameworks for tier-0 infrastructure, and served as senior technical escalation point for complex incidents.',
     consequence: 'Messaging platforms serving 5M+ users across APAC, EMEA and North America, with high availability and low latency.',
+    stats: [
+      { value: '5M+', label: 'users' },
+      { value: '3', label: 'regions: APAC, EMEA and North America' },
+    ],
     listLabel: 'KEY PLATFORMS',
     items: [
       { name: 'Business Messaging', desc: ': real-time, scalable messaging infrastructure.' },
