@@ -1,23 +1,28 @@
 import type { Metadata } from 'next';
-import { getPosts } from '@/lib/blog';
+import Link from 'next/link';
 import { PostCard } from '@/components/post-card';
+import { getPosts } from '@/lib/blog';
 
 export const metadata: Metadata = {
-  title: 'Blog | Harsain',
-  description: 'Writing on event-driven systems, platform engineering and technical leadership.',
+  title: 'Notes',
+  description: 'Technical writing on distributed systems, platforms and engineering leadership.',
 };
 
 export default function BlogIndex() {
   const posts = getPosts();
   return (
-    <div className="container mx-auto max-w-3xl px-6 py-16 md:py-24">
-      <h1 className="text-4xl font-bold text-primary">Blog</h1>
-      <p className="mt-3 text-lg text-muted-foreground">
-        Notes on event-driven systems, platform engineering and technical leadership.
-      </p>
-      <div className="mt-10 grid gap-6">
-        {posts.length === 0 && <p className="text-muted-foreground">First post coming soon.</p>}
-        {posts.map((p) => <PostCard key={p.slug} post={p} />)}
+    <div className="shell" style={{ maxWidth: 860, padding: '40px 32px 72px' }}>
+      <h1 className="h2"># Notes</h1>
+      <p className="lead-p">Technical writing on distributed systems, platforms and engineering leadership.</p>
+      <div style={{ marginTop: 28, display: 'grid', gap: 16 }}>
+        {posts.length === 0 && (
+          <p className="mono" style={{ color: 'var(--muted)', fontSize: 14 }}>
+            No posts yet. <Link href="/">Back to the decision log →</Link>
+          </p>
+        )}
+        {posts.map((p) => (
+          <PostCard key={p.slug} post={p} />
+        ))}
       </div>
     </div>
   );
