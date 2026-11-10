@@ -720,3 +720,50 @@ button:focus-visible {
 @media (max-width: 900px) {
   .adr-col-b { padding-top: 22px; border-top: 1px dashed var(--line2); flex-basis: 100%; }
 }
+
+/* ---------- Reviews ---------- */
+.reviews-grid {
+  margin-top: 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+}
+.review {
+  display: flex;
+  flex-direction: column;
+  padding: 26px 28px;
+  border: 1px solid var(--line2);
+  border-radius: 8px;
+  background: var(--card);
+}
+.review.feature { padding: 34px 36px 28px; border: 1.5px solid var(--ink); }
+.rev-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 12px; }
+.approved {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ok);
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+}
+.review.feature .approved { padding: 5px 12px; border: 2px solid var(--ok); border-radius: 4px; }
+.rev-date { font-family: var(--font-mono), monospace; font-size: 13px; color: var(--muted); }
+.review blockquote { margin: 16px 0 0; font-size: 19px; line-height: 1.6; font-style: italic; flex: 1; }
+.review.feature blockquote { margin-top: 22px; font-size: 25px; max-width: 30em; }
+.rev-by {
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line2);
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.rev-by .k { color: var(--hl); }
+.rev-by b { color: var(--ink); }
+@media (max-width: 640px) {
+  .review, .review.feature { padding: 22px 20px; }
+  .review.feature blockquote { font-size: 21px; }
+}

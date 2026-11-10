@@ -13,6 +13,7 @@ export function SiteHeader() {
         </div>
         <nav className="nav rv" style={{ '--d': '.1s' } as React.CSSProperties} aria-label="Main">
           <Link href="/#decisions">decisions</Link>
+          <Link href="/#reviews">reviews</Link>
           <Link href="/#labs">labs</Link>
           <Link href="/#stack">stack</Link>
           {hasPosts && <Link href="/blog/">notes</Link>}

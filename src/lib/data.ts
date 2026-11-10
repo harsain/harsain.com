@@ -260,3 +260,44 @@ export const credentials = {
   training: ['AI/ML', 'Apache Kafka', 'Elasticsearch', 'AWS', 'TDD/BDD'],
   languages: ['English', 'Hindi', 'Punjabi'],
 };
+
+export type Review = { name: string; role: string; relation: string; date: string; quote: string };
+
+export const reviewsIntro = 'Four of the twelve recommendations on LinkedIn, in the words of the people who wrote them.';
+export const reviewsCount = 12;
+
+// Verbatim excerpts from LinkedIn recommendations. The first one is shown larger.
+export const reviews: Review[] = [
+  {
+    name: 'Stephanie Ross',
+    role: 'Associate Director, Operations',
+    relation: 'worked on the same team',
+    date: 'Mar 2017',
+    quote:
+      "Harsain and I worked as a close-knit tech team to deliver an API-first custom built marketplace. This project was a complete success due to Harsain's thoroughly planned server architecture and API structure. Issues and risks were highlighted, discussed and resolved before we began on development.",
+  },
+  {
+    name: 'John Iaria',
+    role: 'Senior Software Developer / Development Team Lead',
+    relation: 'managed Harsain directly',
+    date: 'Nov 2014',
+    quote:
+      'During this time he was responsible for assessing various development technologies and choosing the toolsets that would become the standard platform for all our mobile application development. He was also responsible for leading the mobile platform development effort and mentoring other team members.',
+  },
+  {
+    name: 'Tom Gojrzewski',
+    role: 'Security, Product Owner',
+    relation: "Harsain's client",
+    date: 'Jun 2013',
+    quote:
+      'His knowledge goes beyond code cutting and he is not your typical developer. Harsain communicates well with the team and has the capacity to be a team lead and an architect of the solution.',
+  },
+  {
+    name: 'Ben Stringer',
+    role: 'Principal Architect, Culture Amp',
+    relation: 'managed Harsain directly',
+    date: 'Jul 2018',
+    quote:
+      "Harsain is an experienced and passionate professional with an eye for detail and a focus on good design. He doesn't settle for mediocre, and will challenge ideas and approaches to chase after the best result.",
+  },
+];

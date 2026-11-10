@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
 import { ContentsNav } from '@/components/contents-nav';
 import { DecisionLog } from '@/components/decision-log';
-import { Capabilities, Contact, Credentials, ImpactBlock, Labs, ReadmeCard, StackBlock } from '@/components/home-sections';
+import { Capabilities, Contact, Credentials, ImpactBlock, Labs, ReadmeCard, Reviews, StackBlock } from '@/components/home-sections';
 import { adrs, profile, site } from '@/lib/data';
 
 const d = (s: number) => ({ '--d': `${s}s` }) as CSSProperties;
@@ -66,6 +66,7 @@ export default function Home() {
 
         <div className="a-main">
           <DecisionLog adrs={adrs} />
+          <Reviews />
           <Labs />
           <Capabilities />
           <StackBlock />

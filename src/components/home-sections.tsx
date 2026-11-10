@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { CodeBox, K, L, M, N, S, StrList } from '@/components/code-block';
-import { capabilities, credentials, impact, labs, labsIntro, profile, site, stack } from '@/lib/data';
+import { capabilities, credentials, impact, labs, labsIntro, profile, reviews, reviewsCount, reviewsIntro, site, stack, type Review } from '@/lib/data';
 
 /** Right rail: who this is, as README front matter. */
 export function ReadmeCard() {
@@ -169,6 +169,66 @@ export function Contact() {
             {c.label}
           </a>
         ))}
+      </div>
+    </section>
+  );
+}
+
+function Approved({ small }: { small?: boolean }) {
+  return (
+    <span className="approved">
+      <svg width={small ? 13 : 14} height={small ? 13 : 14} viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      APPROVED
+    </span>
+  );
+}
+
+function ReviewCard({ r, feature }: { r: Review; feature?: boolean }) {
+  return (
+    <article className={`review ${feature ? 'feature' : ''}`}>
+      <div className="rev-top">
+        <Approved small={!feature} />
+        <span className="rev-date">{feature ? `${r.date} · ${r.relation}` : r.date}</span>
+      </div>
+      <blockquote>&ldquo;{r.quote}&rdquo;</blockquote>
+      <div className="rev-by">
+        <span className="k">Reviewed-by:</span> <b>{r.name}</b>
+        {feature ? (
+          <> · {r.role}</>
+        ) : (
+          <>
+            <br />
+            {r.role}
+            <br />
+            {r.relation}
+          </>
+        )}
+      </div>
+    </article>
+  );
+}
+
+/** Social proof: verbatim LinkedIn recommendations, written as code-review sign-offs. */
+export function Reviews() {
+  const [first, ...rest] = reviews;
+  return (
+    <section className="section">
+      <h2 id="reviews" className="h2 scroll-mt"># Reviews</h2>
+      <p className="lead-p">{reviewsIntro}</p>
+      <div style={{ marginTop: 28 }}>
+        <ReviewCard r={first} feature />
+      </div>
+      <div className="reviews-grid">
+        {rest.map((r) => (
+          <ReviewCard key={r.name} r={r} />
+        ))}
+      </div>
+      <div style={{ marginTop: 20 }}>
+        <a href={site.linkedin} className="inline-link" target="_blank" rel="noopener noreferrer">
+          Read all {reviewsCount} recommendations on LinkedIn →
+        </a>
       </div>
     </section>
   );

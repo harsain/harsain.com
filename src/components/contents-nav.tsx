@@ -4,6 +4,7 @@ import { useEffect, useState, type CSSProperties } from 'react';
 import type { Adr } from '@/lib/data';
 
 const SECTIONS = [
+  { id: 'reviews', label: 'Reviews' },
   { id: 'labs', label: 'Labs' },
   { id: 'capabilities', label: 'Capabilities' },
   { id: 'stack', label: 'Stack' },
