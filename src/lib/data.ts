@@ -29,7 +29,7 @@ export const profile = {
 export const impact = [
   { key: 'nab_loyalty', value: '3M+', text: 'cardholders, millions of loyalty events and transactions a year' },
   { key: 'zendesk_messaging', value: '5M+', text: 'users across APAC, EMEA and North America' },
-  { key: 'card_loyalty_migration', value: 'zero downtime', text: 'millions of active accounts', valueKind: 'ok' as const },
+  { key: 'citi_loyalty_migration', value: 'zero downtime', text: 'millions of active accounts', valueKind: 'ok' as const },
 ];
 
 export type AdrItem = { name: string; desc?: string };
@@ -102,8 +102,8 @@ export const adrs: Adr[] = [
     listLabel: 'KEY INITIATIVES',
     items: [
       {
-        name: 'Credit card loyalty migration into NAB',
-        desc: ': led architecture and execution of a high-concurrency migration of an acquired card portfolio, covering millions of active accounts, with zero downtime.',
+        name: 'Citi credit card loyalty migration to NAB',
+        desc: ': led architecture and execution of a high-concurrency, large-scale migration for millions of active accounts with zero downtime, safeguarding enterprise revenue and regulatory compliance.',
       },
       { name: 'Personal Cards loyalty offers platform', desc: ': an event-driven offers platform built for high throughput and extensibility.' },
       { name: 'Buy Now Pay Later', desc: ': contributed to a high-availability transactional platform supporting rapid growth.' },
@@ -161,6 +161,8 @@ export const adrs: Adr[] = [
     period: '2017-03 → 2018-09',
     status: 'superseded',
     body: 'Designed and built cloud-native microservices platforms for clients, and advised them on event choreography versus orchestration patterns.',
+    listLabel: 'CLIENTS',
+    items: [{ name: 'Transurban' }, { name: 'Vocus' }],
     tags: ['Microservices', 'Cloud-native', 'Consulting'],
     chain: 'Supersedes ADR-0000 · superseded by ADR-0002',
     commit: { tag: 'v1.0.0', subject: 'feat(versent): build cloud-native microservices platforms' },
