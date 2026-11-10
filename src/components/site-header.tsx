@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { getPosts } from '@/lib/blog';
+import { site } from '@/lib/data';
 
 export function SiteHeader() {
   const hasPosts = getPosts().length > 0;
@@ -16,6 +17,9 @@ export function SiteHeader() {
           <Link href="/#stack">stack</Link>
           {hasPosts && <Link href="/blog/">notes</Link>}
           <Link href="/#contact">contact</Link>
+          <a href={site.resume} download>
+            resume
+          </a>
           <ThemeToggle />
         </nav>
       </div>

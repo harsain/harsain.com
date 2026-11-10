@@ -7,6 +7,7 @@ export const site = {
   linkedin: 'https://linkedin.com/in/harsain',
   github: 'https://github.com/harsain',
   base2labs: 'https://base2labs.tech',
+  resume: '/Harsain_Kapoor_Resume.pdf',
 };
 
 export const profile = {

@@ -51,6 +51,9 @@ export default function Home() {
             <a href={site.github} className="btn" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
+            <a href={site.resume} className="btn" download>
+              Resume (PDF)
+            </a>
           </div>
         </section>
 
