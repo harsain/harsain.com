@@ -18,16 +18,40 @@ export function ContentsNav({ adrs }: { adrs: Adr[] }) {
 
   useEffect(() => {
     const ids = ['decisions', ...adrs.map((a) => `adr-${a.num}`), ...SECTIONS.map((s) => s.id)];
-    const els = ids.map((id) => document.getElementById(id)).filter((e): e is HTMLElement => !!e);
-    const io = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        if (visible[0]) setActive(visible[0].target.id);
-      },
-      { rootMargin: '-30% 0px -60% 0px' },
-    );
-    els.forEach((e) => io.observe(e));
-    return () => io.disconnect();
+    let frame = 0;
+    // The active item is the last heading that has scrolled past 35% of the viewport.
+    // Position-based, so it is right after a jump link as well as after normal scrolling.
+    const update = () => {
+      frame = 0;
+      const line = window.innerHeight * 0.35;
+      // Look the headings up on every update: the decision cards are re-created when the view switches.
+      let current = 'decisions';
+      let last = current;
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        last = id;
+        if (el.getBoundingClientRect().top <= line) current = id;
+      }
+      // At the very bottom the last section can never reach the line, so it wins there.
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) current = last;
+      setActive(current);
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    // Re-check when the page height changes, for example after switching between the ADR and git log views.
+    const resizeObserver = new ResizeObserver(onScroll);
+    resizeObserver.observe(document.body);
+    update();
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      resizeObserver.disconnect();
+      if (frame) cancelAnimationFrame(frame);
+    };
   }, [adrs]);
 
   const step = 56;
